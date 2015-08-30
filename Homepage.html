@@ -1,0 +1,516 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CDEWorld Homepage Test</title>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic,700' rel='stylesheet' type='text/css'>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/responsive-nav.css" />
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="js/responsive-nav.min.js"></script>
+<script type="text/javascript">
+	equalheight = function(container){
+		var currentTallest = 0,
+			 currentRowStart = 0,
+			 rowDivs = new Array(),
+			 $el,
+			 topPosition = 0;
+		 $(container).each(function() {
+		
+		   $el = $(this);
+		   $($el).height('auto')
+		   topPostion = $el.position().top;
+		
+		   if (currentRowStart != topPostion) {
+			 for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+			   rowDivs[currentDiv].height(currentTallest);
+			 }
+			 rowDivs.length = 0; // empty the array
+			 currentRowStart = topPostion;
+			 currentTallest = $el.height();
+			 rowDivs.push($el);
+		   } else {
+			 rowDivs.push($el);
+			 currentTallest = (currentTallest < $el.height()) ? ($el.height()) : (currentTallest);
+		  }
+		   for (currentDiv = 0 ; currentDiv < rowDivs.length ; currentDiv++) {
+			 rowDivs[currentDiv].height(currentTallest);
+		   }
+		 });
+		}
+
+$(window).load(function() {
+  equalheight('.card.main-two');
+});
+
+$(window).resize(function() {
+  equalheight('.card.main-two');
+});
+</script>
+</head>
+<body>
+	<div class="top-bar">
+		<div class="wrapper">
+			<div class="row">
+				<div class="col-full">
+					<div class="search-input">
+						<span class="fa fa-search"></span>
+						<input type="search" value="" placeholder="Search..." />
+					</div>
+					<ul class="sign-container">
+						<!--<a class="login" href="#">Log In</a> | <a class="signup" href="#">Sign Up</a>-->
+						<li class="account">Daniel Dae Kim <a href="#"><span class="fa fa-caret-down"></span></a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="wrapper">
+		<div class="row">
+			<div class="col-full">
+				<div class="menubar">
+					<a href="#"><img src="images/CDW-Logo-2.png" alt="" width="170" /></a>
+					<ul class="main-nav">
+						<li><a href="#">Courses</a></li>
+						<li><a href="#">Events</a></li>
+						<li><a href="#">Webinars</a></li>
+						<li><a href="#">eBooks</a></li>
+						<li><a href="#">Partner Programs</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<section id="billboard">
+		<div class="wrapper">
+			<div class="row">
+				<div class="col-full">
+					<ul class="bxslider">
+					  <li><img src="http://graphics8.nytimes.com/adx/images/ADS/40/97/ad.409789/CRS-7044_Digi_970x250_released.jpg" /></li>
+					  <li>
+						  <img src="images/small.jpg"
+						 srcset="images/large.jpg 970w, images/medium.jpg 768w, images/small.jpg 481w"
+						 sizes="(min-width: 972px) 100vw,
+						 (min-width: 768px) 768vw,
+						 (max-width: 767px) 481vw, 100vw"
+						 alt="A rad wolf">
+					  </li>
+					  <!--<li><img src="images/billboard-1.jpg" /></li>
+					  <li><img src="images/billboard-2.jpg" /></li>
+					  <li><img src="images/billboard-3.jpg" /></li>
+					  <li><img src="images/billboard-4.jpg" /></li>-->
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	<main>
+		<div class="wrapper">
+			<div class="row">
+				<div class="col col-3">
+					<div class="home-sidebar">
+						<nav>
+							<ul class="sidebar-profession" id="nav-profession">
+								<li><a onclick="return false;" id="279" class="active" >Dentist</a></li>
+								<li><a onclick="return false;" id="281">Dental Assistant</a></li>
+								<li><a onclick="return false;" id="314">Laboratory Technician</a></li>
+								<li><a onclick="return false;" id="280">Dental Hygienist</a></li>
+							</ul>
+							<label class="select-arrow profession-select">
+							<select id="sidebar-profession-collapse" class="tinynav">
+							<option value="" selected="selected" disabled="disabled">Select a Profession</option>
+							<option class="dental" value="dental">Dentist</option>
+							<option class="assistant" value="assistant">Dental Assistant</option>
+							<option class="lab" value="lab">Laboratory Technician</option>
+							<option class="hygienist" value="hygienist">Dental Hygienist</option></select>
+							</label>
+						</nav>
+						<nav>
+							<label class="select-arrow category-select">
+							<select id="sidebar-category-collapse" class="tinynav">
+							<option value="" selected="selected" disabled="disabled">All Course Categories</option>
+							<option value="#">Anesthesia, Oral Sedation, and Pain Control</option><option value="#">Basic Sciences</option><option value="#">Biomedical Sciences</option><option value="#">CAD/CAM</option><option value="#">Cariology &amp; Caries Management</option><option value="#">Community Dentistry &amp; Dental Public Health</option><option value="#">Community Health and Health Policy</option><option value="#">Dental Assistant</option><option value="#">Dental Diseases &amp; Conditions</option><option value="#">Dental Equipment</option><option value="#">Dental Hygienist</option><option value="#">Dental Materials</option><option value="#">Dental Sleep Medicine</option><option value="#">Dental Technology and Laboratory Sciences</option><option value="#">Dentin Hypersensitivity</option><option value="#">Dentist</option><option value="#">Dentures - Partials &amp; Complete</option><option value="#">Diagnosis, Treatment Planning &amp; Interdisciplinary</option><option value="#">Emerging Technologies in Dentistry</option><option value="#">Endodontics</option><option value="#">Ergonomics</option><option value="#">Esthetic Dentistry</option><option value="#">Evidence-Based Practice</option><option value="#">Forensic Dentistry (AGD 752)</option><option value="#">General &amp; Comprehensive Dentistry</option><option value="#">Implantology</option><option value="#">Infection Control &amp; Waste Management</option><option value="#">Lab Courses</option><option value="#">Lab Management and Communication</option><option value="#">Laser Therapy</option><option value="#">Medical Emergencies in the Office</option><option value="#">Minimally Invasive Dentistry</option><option value="#">Myofascial Pain</option><option value="#">Non-Surgical Therapeutic Management</option><option value="#">Occlusion</option><option value="#">Operative Dentistry</option><option value="#">Oral And Maxillofacial Surgery</option><option value="#">Oral Medicine &amp; Diagnosis</option><option value="#">Oral Pathology</option><option value="#">Oral Radiology, Imaging and Photography</option><option value="#">Oral Surgery</option><option value="#">Orthodontics</option><option value="#">Patient Education &amp; Communication</option><option value="#">Pediatric Dentistry</option><option value="#">Periodontics</option><option value="#">Pharmacology and Therapeutics</option><option value="#">Practice Management</option><option value="#">Preventative Dentistry</option><option value="#">Prosthodontics</option><option value="#">Restorative Dentistry</option><option value="#">Special Care Dentistry</option><option value="#">Substance Abuse</option><option value="#">Systemic Health</option><option value="#" >Whitening</option></select>
+							</label>
+							<ul class="sidebar-category" id="nav">
+								<h3 class="sidebar-category-title" >All Categories</h3>
+								<li><a href="#">Anesthesia, Oral Sedation, and Pain Control</a></li>
+								<li><a href="#">Basic Sciences</a></li>			
+								<li><a href="#">Biomedical Sciences</a></li>
+								<li><a href="#">CAD/CAM</a></li>
+								<li><a href="#">Cariology & Caries Management</a></li>
+								<li><a href="#">Community Dentistry & Dental Public Health</a></li>
+								<li><a href="#">Community Health and Health Policy</a></li>
+								<li><a href="#">Dental Assistant</a></li>
+								<li><a href="#">Dental Diseases & Conditions</a></li>
+								<li><a href="#">Dental Equipment</a></li>
+								<li><a href="#">Dental Hygienist</a></li>
+								<li><a href="#">Dental Materials</a></li>
+								<li><a href="#">Dental Sleep Medicine</a></li>
+								<li><a href="#">Dental Technology and Laboratory Sciences</a></li>
+								<li><a href="#">Dentin Hypersensitivity</a></li>
+								<li><a href="#">Dentist</a></li>
+								<li><a href="#">Dentures - Partials & Complete</a></li>
+								<li><a href="#">Diagnosis, Treatment Planning & Interdisciplinary</a></li>
+								<li><a href="#">Emerging Technologies in Dentistry</a></li>
+								<li><a href="#">Endodontics</a></li>
+								<li><a href="#">Ergonomics</a></li>
+								<li><a href="#">Esthetic Dentistry</a></li>
+								<li><a href="#">Evidence-Based Practice</a></li>
+								<li><a href="#">Forensic Dentistry (AGD 752)</a></li>
+								<li><a href="#">General & Comprehensive Dentistry</a></li>
+								<li><a href="#">Implantology</a></li>
+								<li><a href="#">Infection Control & Waste Management</a></li>
+								<li><a href="#">Lab Courses</a></li>
+								<li><a href="#">Lab Management and Communication</a></li>
+								<li><a href="#">Laser Therapy</a></li>
+								<li><a href="#">Medical Emergencies in the Office</a></li>
+								<li><a href="#">Minimally Invasive Dentistry</a></li>
+								<li><a href="#">Myofascial Pain</a></li>
+								<li><a href="#">Non-Surgical Therapeutic Management</a></li>
+								<li><a href="#">Occlusion</a></li>
+								<li><a href="#">Operative Dentistry</a></li>
+								<li><a href="#">Oral And Maxillofacial Surgery</a></li>
+								<li><a href="#">Oral Medicine & Diagnosis</a></li>
+								<li><a href="#">Oral Pathology</a></li>
+								<li><a href="#">Oral Radiology, Imaging and Photography</a></li>
+								<li><a href="#">Oral Surgery</a></li>
+								<li><a href="#">Orthodontics</a></li>
+								<li><a href="#">Patient Education & Communication</a></li>
+								<li><a href="#">Pediatric Dentistry</a></li>
+								<li><a href="#">Periodontics</a></li>
+								<li><a href="#">Pharmacology and Therapeutics</a></li>
+								<li><a href="#">Practice Management</a></li>
+								<li><a href="#">Preventative Dentistry</a></li>
+								<li><a href="#">Prosthodontics</a></li>
+								<li><a href="#">Restorative Dentistry</a></li>
+								<li><a href="#">Special Care Dentistry</a></li>
+								<li><a href="#">Substance Abuse</a></li>
+								<li><a href="#">Systemic Health</a></li>
+								<li><a href="#">Whitening</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+				<div class="col col-9">
+				<section class="home-featured">
+					<!-- Featured Articles-->
+					<h1 class="home-section-title" id="featured-articles">Featured Dental CE Articles</h1>
+					<div class="card shadow-1 main-two">
+						<div>
+							<img class="header-img" src="images/article.jpg" alt="" />
+							<h2><a href="#">Bulk-Fill Composites for Class II Restorations</a></h2>
+							<p class="subtext">Credits: 2 SI • Cost: $16 • Category: Composites</p>
+							<p class="description">The layering technique has been advocated for posterior composites to reduce polymerization shrinkage and allow adequate depth of cure.</p>
+						</div>
+					</div>
+					<div class="card shadow-1 second main-two">
+						<div>
+							<img class="header-img" src="images/article.jpg" alt="" />
+							<h2><a href="#">Guided Full-Arch Immediate- Function Approach for Edentulous and Terminal Dentition Cases</a></h2>
+							<p class="subtext">Credits: 2 SI • Cost: $16 • Category: Composites</p>
+							<p class="description">This article reviews the rationale, techniques, and advantages of a guided full-arch immediate-function implant treatment modality.</p>
+						</div>
+					</div>
+					<div class="card shadow-2 full">
+						<div>
+							<h4>More Dental CE Articles</h4>
+							<ul class="more-list">
+								<li><a href="#">Optimizing Peri-Implant Soft-Tissue Outcomes</a></li>
+								<li><a href="#">Streamlining with a Digital Denture Procedure</a></li>
+								<li><a href="#">Pharmacokinetic Considerations for Moderate and Deep Sedation</a></li>
+								<li><a href="#">New Materials Present New Options for Shade Matching</a></li>
+							</ul>
+							<div class="view-all">
+								<a href="#" class="btn">View All Dental CE Articles &raquo;</a>
+							</div>
+						</div>
+					</div>
+					<!-- End of Featured Articles -->
+					
+					<!-- Center Banner -->
+					<div class="centerbanner">
+						<img src="images/centerbanner.jpg" alt="" />
+					</div>
+					<!-- End of Center Banner -->
+					
+					<!-- Featured Events-->
+					<h1 class="home-section-title" id="featured-events">Featured Dental CE Events</h1>
+					<div class="card shadow-1 main-two">
+						<div>
+							<img class="header-img" src="images/event.jpg" alt="" />
+							<h2><a href="#">Updates in Clinical Dentistry</a></h2>
+							<p class="subtext">Date: Aug 14, 2015 • Credits: 18 • Santa Ana, CA</p>
+							<p class="description">The layering technique has been advocated for posterior composites to reduce polymerization shrinkage and allow adequate depth of cure.</p>
+						</div>
+					</div>
+					<div class="card shadow-1 second main-two">
+						<div>
+							<img class="header-img" src="images/event.jpg" alt="" />
+							<h2><a href="#">CBCT: Enhance Your Practice, Enhance Your Quality of Care</a></h2>
+							<p class="subtext">Date: Aug 28, 2015 • Credits: 12 • Hyattsville, MD</p>
+							<p class="description">Today’s foremost dental educators are coming to discuss a comprehensive program in contemporary oral healthcare.</p>
+						</div>
+					</div>
+					<div class="card shadow-2 full">
+						<div>
+							<h4>More Dental CE Events</h4>
+							<ul class="more-list">
+								<li><a href="#">Optimizing Peri-Implant Soft-Tissue Outcomes</a></li>
+								<li><a href="#">Streamlining with a Digital Denture Procedure</a></li>
+								<li><a href="#">Pharmacokinetic Considerations for Moderate and Deep Sedation</a></li>
+								<li><a href="#">New Materials Present New Options for Shade Matching</a></li>
+							</ul>
+							<div class="view-all">
+								<a href="#" class="btn">View All Events &raquo;</a>
+							</div>
+						</div>
+					</div>
+					<!-- End of Featured Events -->
+					
+					<!-- Center Banner -->
+					<div class="centerbanner">
+						<img src="images/centerbanner.jpg" alt="" />
+					</div>
+					<!-- End of Center Banner -->
+					
+					<!-- Featured Webinars-->
+					<h1 class="home-section-title" id="featured-webinars">Featured Dental CE Webinars</h1>
+					<div class="card shadow-1 main-two">
+						<div>
+							<h2><a href="#">Is the Mandibular Block Passé?</a></h2>
+							<p class="subtext">On-Demand Webinar</p>
+							<p class="description">Stanley F. Malamed, DDS<br />
+	Ostrow School of Dentistry at USC</p>
+						</div>
+					</div>
+					<div class="card shadow-1 second main-two">
+						<div>
+							<h2><a href="#">The Anterior Single-Tooth Site: Maximizing Bone Volume and Soft Tissue Contours</a></h2>
+							<p class="subtext">On-Demand Webinar</p>
+							<p class="description">Alan Fetner, DMD<br />
+	Private Practice, Jacksonville, FL</p>
+						</div>
+					</div>
+					<div class="card shadow-2 full">
+						<div>
+							<h4>More Dental CE Webinars</h4>
+							<ul class="more-list">
+								<li>
+									<a href="#">Understanding Occlusion
+									<span>On-Demand - Expires May 30, 2018 • Credit: 1 Si • Cost: $0</span></a>
+								</li>
+								<li>
+									<a href="#">Basic Medical Emergencies: Do you know what's inside your kit?
+									<span>Live Webinar - Date: Aug 11, 2015 • Credit: 1 Interactive • Cost: $0</span></a>
+								</li>
+								<li>
+									<a href="#">The Most Profitable Changes You Can Make to a Private Practice
+									<span>On-Demand - Expires July 31, 2018 • Credit: 1 SI • Cost: $0</span></a>
+								</li>
+								<li>
+									<a href="#">Innovative Treatment Concept for Immediate Extraction Sockets
+									<span>Live Webinar - Date: Sept 23, 2015 • Credit: 1 Interactive • Cost: $0</span></a>
+								</li>
+							</ul>
+							<div class="view-all">
+								<a href="#" class="btn">View All On-Demand Webinars &raquo;</a>
+								<a href="#" class="btn">View All Live Webinars &raquo;</a>
+							</div>
+						</div>
+					</div>
+					<!-- End of Featured Webinars -->
+					
+					<!-- Center Banner -->
+					<div class="centerbanner">
+						<img src="images/centerbanner.jpg" alt="" />
+					</div>
+					<!-- End of Center Banner -->
+					
+					<!--CDEWorld Partners -->
+					<h1 class="home-section-title">CDEWorld Partners</h1>
+					<div class="card shadow-2 full">
+						<div>
+							<p>Our dental industry CDE partners include associations, manufacturers, organizations, and publishers committed to upholding the ADA CERP guidelines and developing quality education for the oral healthcare community. Dental Learning Systems is proud to work with these distinguished entities by providing a comprehensive online platform to enhance the availability and visibility of their time-tested educational offerings.</p>
+
+<p>Working together, our objective is to increase the range and influence of high quality evidence-based continuing education materials for the benefit of oral healthcare professionals and their patients.</p>
+							<div class="logo-grid">
+								<ul class="logo-grid-logos">
+									<li><img src="images/parkell-logo.jpg" /></li>
+									<li><img src="images/parkell-logo.jpg" /></li>
+									<li><img src="images/parkell-logo.jpg" /></li>
+									<li><img src="images/parkell-logo.jpg" /></li>
+									<li><img src="images/parkell-logo.jpg" /></li>
+									<li><img src="images/parkell-logo.jpg" /></li>
+									<li><img src="images/parkell-logo.jpg" /></li>
+									<li><img src="images/parkell-logo.jpg" /></li>
+									<li><img src="images/parkell-logo.jpg" /></li>
+									<li><img src="images/parkell-logo.jpg" /></li>
+									<li><img src="images/parkell-logo.jpg" /></li>
+									<li><img src="images/parkell-logo.jpg" /></li>
+									<li><img src="images/parkell-logo.jpg" /></li>
+									<li><img src="images/parkell-logo.jpg" /></li>
+									<li><img src="images/parkell-logo.jpg" /></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!--End of CDEWorld Partners-->
+					
+					</section>
+				</div>
+			</div>
+		</div>
+	</main>
+	<section id="dental-disclaimer">
+		<div class="wrapper">
+			<div class="row">
+				<div class="col col-6 cerp">
+					<img src="images/adacerp.jpg" alt="ADA CERP" />
+					<p>
+						ADA CERP is a service of the American Dental Association to assist dental professionals in identifying quality providers of continuing dental education. ADA CERP does not approve or endorse individual courses or instructors, nor does it imply acceptance of credit house by boards of dentistry.
+					</p>
+				</div>
+				<div class="col col-6 pace">
+					<img src="images/agdpace.jpg" alt="AGD Pace" />
+					<p>
+						Approved PACE Program Provider FAGD/MAGD Credit
+Approval does not imply acceptance by a state or provincial board of dentistry or AGD endorsement 1/1/2013 to 12/31/2016. Provider ID# 209722
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<div class="wrapper">
+			<div class="row">
+				<div class="col col-3">
+					<h3>Career Courses</h3>
+					<ul class="footer-col">
+						<li><a href="#">Dentist</a></li>
+						<li><a href="#">Dental Hygenist</a></li>
+						<li><a href="#">Dental Assistant</a></li>
+						<li><a href="#">Lab Techninican</a></li>
+					</ul>
+				</div>
+				<div class="col col-3">
+					<h3>CDEWorld</h3>
+					<ul class="footer-col">
+						<li><a href="#">About Us</a></li>
+						<li><a href="#">Contact</a></li>
+						<li><a href="#">CE Accrediation</a></li>
+						<li><a href="#">Return Policy</a></li>
+						<li><a href="#">State CE Requirements</a></li>
+					</ul>
+				</div>
+				<div class="col col-3">
+					<h3>Subscriptions</h3>
+					<ul class="footer-col">
+						<li><a href="#">Dentist</a></li>
+						<li><a href="#">Hygienist</a></li>
+						<li><a href="#">Assistant</a></li>
+						<li><a href="#">Lab Tech</a></li>
+						<li><a href="#">Events</a></li>
+						<li><a href="#">Webinars</a></li>
+						<li><a href="#">eBooks</a></li>
+					</ul>
+				</div>
+				<div class="col col-3">
+					<h3>Follow Us On</h3>
+					<ul class="footer-col">
+						<li><a href="#">Twitter</a></li>
+						<li><a href="#">Facebook</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<section id="copyright">
+		<div class="wrapper">
+			<div class="col col-4">
+				<p>© 2015 Dental Learning Systems, LLC</p>
+			</div>
+		</div>
+	</section>
+</div>
+<script>
+  var nav = responsiveNav(".main-nav");
+</script>
+<script src="http://bxslider.com/lib/jquery.bxslider.js"></script>
+<script >
+$(document).ready(function(){
+  $('.bxslider').bxSlider({
+	  auto: true,
+	  controls: false,
+	  pager: false
+  });
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function(e) {
+	$('.sidebar-profession a').click(function(){
+		var clicked = $(this);
+		if (this.active != 'true') {
+			$('.sidebar-profession a.active').removeClass('active');
+			$(this).addClass('active');
+		} else {
+			
+		}
+		if (clicked.attr('id') === "279") {
+			$('.home-section-title#featured-articles').text('Featured Dental CE Articles');
+			$('.home-section-title#featured-events').text('Featured Dental CE Events');
+			$('.home-section-title#featured-webinars').text('Featured Dental CE Webinars');
+			$('#sidebar-profession-collapse option').prop('selected', false);
+			$('#sidebar-profession-collapse option.dental').prop('selected', true);
+		} else if (clicked.attr('id') === "280") {
+			$('.home-section-title#featured-articles').text('Featured Dental Hygienist CE Articles');
+			$('.home-section-title#featured-events').text('Featured Dental Hygienist CE Events');
+			$('.home-section-title#featured-webinars').text('Featured Dental Hygienist CE Webinars');
+			$('#sidebar-profession-collapse option').prop('selected', false);
+			$('#sidebar-profession-collapse option.hygienist').prop('selected', true);
+		} else if (clicked.attr('id') === "281") {
+			$('.home-section-title#featured-articles').text('Featured Dental Assistant CE Articles');
+			$('.home-section-title#featured-events').text('Featured Dental Assistant CE Events');
+			$('.home-section-title#featured-webinars').text('Featured Dental Assistant CE Webinars');
+			$('#sidebar-profession-collapse option').prop('selected', false);
+			$('#sidebar-profession-collapse option.assistant').prop('selected', true);
+		} else if (clicked.attr('id') === "314") {
+			$('.home-section-title#featured-articles').text('Featured Laboratory Technician CE Articles');
+			$('.home-section-title#featured-events').text('Featured Laboratory Technician CE Events');
+			$('.home-section-title#featured-webinars').text('Featured Laboratory Technician CE Webinars');
+			$('#sidebar-profession-collapse option').prop('selected', false);
+			$('#sidebar-profession-collapse option.lab').prop('selected', true);
+		} else {
+		}
+		$('#sidebar-profession-collapse option:selected').each(function() {
+		$(this).find('#sidebar-profession-collapse option:selected');
+		console.log("select");
+		});
+	});
+	$('#sidebar-profession-collapse').change(function() {
+		if ($('#sidebar-profession-collapse').find('option:selected').val() === "lab") {
+			$('.home-section-title#featured-articles').text('Featured Laboratory Technician CE Articles');
+			$('.home-section-title#featured-events').text('Featured Laboratory Technician CE Events');
+			$('.home-section-title#featured-webinars').text('Featured Laboratory Technician CE Webinars');
+		} else if ($('#sidebar-profession-collapse').find('option:selected').val() === "assistant"){
+			$('.home-section-title#featured-articles').text('Featured Dental Assistant CE Articles');
+			$('.home-section-title#featured-events').text('Featured Dental Assistant CE Events');
+			$('.home-section-title#featured-webinars').text('Featured Dental Assistant CE Webinars');
+		} else if ($('#sidebar-profession-collapse').find('option:selected').val() === "hygienist"){
+			$('.home-section-title#featured-articles').text('Featured Dental Hygienist CE Articles');
+			$('.home-section-title#featured-events').text('Featured Dental Hygienist CE Events');
+			$('.home-section-title#featured-webinars').text('Featured Dental Hygienist CE Webinars');
+		} else if ($('#sidebar-profession-collapse').find('option:selected').val() === "dental"){
+			$('.home-section-title#featured-articles').text('Featured Dental CE Articles');
+			$('.home-section-title#featured-events').text('Featured Dental CE Events');
+			$('.home-section-title#featured-webinars').text('Featured Dental CE Webinars');
+		} else {
+			console.log('choose');
+		}
+	});
+});
+	
+</script>
+</body>
+</html>
